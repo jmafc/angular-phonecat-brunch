@@ -5,8 +5,8 @@ files = [
   JASMINE_ADAPTER,
   'components/angular/angular.js',
   'components/angular-mocks/angular-mocks.js',
-  'app/scripts/**/*.js',
-  'test/unit/**/*.js'
+  'app/scripts/**/*.coffee',
+  'test/unit/**/*.coffee'
 ];
 
 autoWatch = true;
