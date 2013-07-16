@@ -58,3 +58,7 @@ update to more recent versions.
 Use the following:
 
 `npm start`
+
+## More
+
+Please read the [docs/README](docs/README.md) for more.
