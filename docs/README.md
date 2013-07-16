@@ -129,7 +129,7 @@ Brunch will watch the files in the project and re-compile whenever
 necessary.  In addition, `auto-reload-brunch` will react to changes on
 the web browser side.
 
-## Tutorial Outline
+# Tutorial Outline
 
 Please refer to the [Angular-phonecat
 README](https://github.com/angular/angular-phonecat/blob/master/README.md)
@@ -138,7 +138,7 @@ for details on the steps from the basic AngularJS viewpoint.  In what
 follows, we highlight the differences between *angular-phonecat* and
 this project.
 
-### Step-0
+## Step-0
 
 At this stage, the simple `index.html` is almost identical to the one
 from the parent project.  However, it is placed in `app/assets`
@@ -157,7 +157,7 @@ working by doing the experiment suggested in [this
 step](http://docs.angularjs.org/tutorial/step_00) of the AngularJS
 tutorial.
 
-### Step-0a
+## Step-0a
 
 In this step, we converted the `index.html` file to a
 [Jade](http://jade-lang.com/) template.  `index.jade` gets compiled,
@@ -165,7 +165,7 @@ with the help of
 [jade-angularjs-brunch](https://github.com/GulinSS/jade-angularjs-brunch),
 and ends up as `public/index.html` just like the original.
 
-### Step-1
+## Step-1
 
 This step introduces some minor HTML and CSS changes:
 
@@ -175,7 +175,7 @@ This step introduces some minor HTML and CSS changes:
 Note that the latter CSS file gets concatenated at the end of
 `bootstrap.css` to form `public/css/app.css`.
 
-### Step-2
+## Step-2
 
 This is where an [AngularJS
 controller](http://docs.angularjs.org/guide/dev_guide.mvc.understanding_controller)
@@ -183,7 +183,7 @@ makes its first appearance, feeding static data to the application.
 The HTML also becomes dynamic with the [ngRepeat
 directive](http://docs.angularjs.org/api/ng.directive:ngRepeat).
 
-### Unit Testing
+## Unit Testing
 
 Step-2 also incorporates unit testing.  This is done through the
 [Karma](http://karma-runner.github.io/) test runner and the
@@ -206,7 +206,7 @@ identical to the one in *angular-phonecat* (but see below).
 To run the unit tests, invoke `npm test`.  Karma will be watching your
 source files as well, so that changes you make will trigger a re-test.
 
-### Step-2a
+## Step-2a
 
 At this stage we replaced the JavaScript files
 (`app/scripts/controllers.js` and `test/unit/controllersSpec.js`) by
