@@ -211,3 +211,39 @@ source files as well, so that changes you make will trigger a re-test.
 At this stage we replaced the JavaScript files
 (`app/scripts/controllers.js` and `test/unit/controllersSpec.js`) by
 [CoffeeScript](http://coffeescript.org/) counterparts.
+
+## Step-3
+
+In this step, a
+[filter](http://docs.angularjs.org/api/ng.filter:filter) is used to
+allow the user to select a subset of records. This also demonstrates
+data binding since the input box has the `ng-model` attribute with
+value **query** and the latter is used as the `expression` parameter
+to the filter.
+
+Only `app/index.html` was changed in the original, so we only made
+equivalent modifications to `app/index.jade`.
+
+## Scenario Testing
+
+Step-3 also introduces scenario testing (also referred to as
+end-to-end testing in AngularJS documentation).  To support this, we
+added the original `config/karma-e2e.conf.js` in the `test` directory
+and adapted it by changing the file extensions, browsers and proxy
+port, and adding a `urlRoot` specification.
+
+We also adapted `test/e2e/scenarios.js` into an equivalent
+Coffeescript file.
+
+In order to run the tests, you first need to have the Brunch server
+running (i.e., do `npm start` or `brunch w -s`).  Then, from another
+shell invoke:
+
+`karma start test/karma-e2e.conf.js`
+
+This is set up to run as a single shot rather than watch over files.
+*Angular-phonecat* also includes a `test/e2e/runner.html` which allows
+running the scenario tests from an already open browser window.  This
+could perhaps be adapted to run from the `public` directory (by
+installing the original in `app/assets`, but we have chosen not to do
+so for the time being.
