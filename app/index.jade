@@ -13,9 +13,13 @@ html(lang="en", ng-app)
           // Sidebar content
           | Search:
           input(ng-model="query")
+          | Sort by:
+          select(ng-model="orderProp")
+            option(value="name") Alphabetical
+            option(value="age") Newest
         .span10
           // Body content
           ul.phones
-            li(ng-repeat="phone in phones | filter:query")
+            li(ng-repeat="phone in phones | filter:query | orderBy:orderProp")
               {{phone.name}}
               p {{phone.snippet}}

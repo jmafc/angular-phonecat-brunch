@@ -247,3 +247,17 @@ running the scenario tests from an already open browser window.  This
 could perhaps be adapted to run from the `public` directory (by
 installing the original in `app/assets`, but we have chosen not to do
 so for the time being.
+
+## Step-4
+
+This step adds a simple feature: a drop-down list to allow the user to
+select the order in which the items are displayed.  An 'age' property
+is added to the model to support both alphabetical and aged ordering.
+An additional unit test and a couple of end-to-end tests are present
+as well.
+
+The changes to HTML and JavaScript in the original project were fairly
+straightforward to convert to Jade and CoffeeScript.  Note that the
+CoffeeScript files have been style-checked with
+[CoffeeLint](http://www.coffeelint.org/), which resulted, for example,
+in reformatting some long lines.

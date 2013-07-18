@@ -5,9 +5,15 @@
 describe 'PhoneCat controllers', ->
 
   describe 'PhoneListCtrl', ->
+    scope = {}
+    ctrl = undefined
 
-    it 'should create "phones" model with 3 phones', ->
+    beforeEach ->
       scope = {}
       ctrl = new PhoneListCtrl(scope)
 
-      expect(scope.phones.length).toBe(3)
+    it 'should create "phones" model with 3 phones', ->
+      expect(scope.phones.length).toBe 3
+
+    it 'should set the default value of orderProp model', ->
+      expect(scope.orderProp).toBe 'age'
