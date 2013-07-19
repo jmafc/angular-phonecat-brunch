@@ -276,3 +276,13 @@ This process is mocked in the unit tests by using the
 to supply fixed data and by instantiating the controller before each
 test.  The scenario test only required adjustment to the expected item
 counts.
+
+## Step-6
+
+In this step, thumbnail images of the phones were added to the list.
+We added the JPEGs in `app/img/phones/` to `app/assets/img/phones` so
+they would get copied to `public/img/phones`.  `app/index.jade` was
+modified to include IMG tags (and also links to future detail pages.
+The `app.css` file was changed to size the thumbnails and to better
+style the page.  Finally, a third end-to-end test was added to
+`test/e2e/scenarios.coffee`.
