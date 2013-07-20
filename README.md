@@ -31,6 +31,9 @@ Install Bower globally, using:
 
  `npm install -g bower`
 
+On Windows, the above command has to be invoked with Git on your path,
+so you may want to issue it from a Git Bash window.
+
 Until full Bower support is released for Brunch, some manual steps are
 necessary:
 
@@ -58,6 +61,13 @@ update to more recent versions.
 Use the following:
 
 `npm start`
+
+### Karma
+
+From step-2 onwards, you will need the Karma test runner, so you may
+want to install it globally now, using:
+
+`npm install -g karma`
 
 ## More
 
