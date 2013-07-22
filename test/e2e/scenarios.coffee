@@ -4,10 +4,14 @@
 
 describe 'PhoneCat App', ->
 
+  it 'should redirect index.html to index.html#/phones', ->
+    browser().navigateTo '/'
+    expect(browser().location().url()).toBe '/phones'
+
   describe 'Phone list view', ->
 
     beforeEach ->
-      browser().navigateTo '/'
+      browser().navigateTo '/#/phones'
 
     it 'should filter the phone list as user types into the search box', ->
       expect(repeater('.phones li').count()).toBe 20
@@ -37,3 +41,11 @@ describe 'PhoneCat App', ->
       input('query').enter 'nexus'
       element('.phones li a').click()
       expect(browser().location().url()).toBe '/phones/nexus-s'
+
+  describe 'Phone detail view', ->
+
+    beforeEach ->
+      browser().navigateTo '/#/phones/nexus-s'
+
+    it 'should display placeholder page with phoneId', ->
+      expect(binding('phoneId')).toBe 'nexus-s'

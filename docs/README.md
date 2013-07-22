@@ -138,7 +138,7 @@ for details on the steps from the basic AngularJS viewpoint.  In what
 follows, we highlight the differences between *angular-phonecat* and
 this project.
 
-## Step-0
+## Step-0 - Bootstrapping the App
 
 At this stage, the simple `index.html` is almost identical to the one
 from the parent project.  However, it is placed in `app/assets`
@@ -157,7 +157,7 @@ working by doing the experiment suggested in [this
 step](http://docs.angularjs.org/tutorial/step_00) of the AngularJS
 tutorial.
 
-## Step-0a
+## Step-0a - Use Jade Templates
 
 In this step, we converted the `index.html` file to a
 [Jade](http://jade-lang.com/) template.  `index.jade` gets compiled,
@@ -165,7 +165,7 @@ with the help of
 [jade-angularjs-brunch](https://github.com/GulinSS/jade-angularjs-brunch),
 and ends up as `public/index.html` just like the original.
 
-## Step-1
+## Step-1 - Static Item List
 
 This step introduces some minor HTML and CSS changes:
 
@@ -175,7 +175,7 @@ This step introduces some minor HTML and CSS changes:
 Note that the latter CSS file gets concatenated at the end of
 `bootstrap.css` to form `public/css/app.css`.
 
-## Step-2
+## Step-2 - Angular ngRepeat Directive
 
 This is where an [AngularJS
 controller](http://docs.angularjs.org/guide/dev_guide.mvc.understanding_controller)
@@ -206,13 +206,13 @@ identical to the one in *angular-phonecat* (but see below).
 To run the unit tests, invoke `npm test`.  Karma will be watching your
 source files as well, so that changes you make will trigger a re-test.
 
-## Step-2a
+## Step-2a - Use CoffeeScript
 
 At this stage we replaced the JavaScript files
 (`app/scripts/controllers.js` and `test/unit/controllersSpec.js`) by
 [CoffeeScript](http://coffeescript.org/) counterparts.
 
-## Step-3
+## Step-3 - Interactive Search
 
 In this step, a
 [filter](http://docs.angularjs.org/api/ng.filter:filter) is used to
@@ -248,7 +248,7 @@ could perhaps be adapted to run from the `public` directory (by
 installing the original in `app/assets`, but we have chosen not to do
 so for the time being.
 
-## Step-4
+## Step-4 - Ordering the List
 
 This step adds a simple feature: a drop-down list to allow the user to
 select the order in which the items are displayed.  An 'age' property
@@ -262,7 +262,7 @@ CoffeeScript files have been style-checked with
 [CoffeeLint](http://www.coffeelint.org/), which resulted, for example,
 in reformatting some long lines.
 
-## Step-5
+## Step-5 - XHR and Dependency Injection
 
 At this stage, the hard-coded data in the controller is replaced by a
 static `phones.json` file.  We placed it under `app/assets/phones` so
@@ -277,7 +277,7 @@ to supply fixed data and by instantiating the controller before each
 test.  The scenario test only required adjustment to the expected item
 counts.
 
-## Step-6
+## Step-6 Add Images and Links
 
 In this step, thumbnail images of the phones were added to the list.
 We added the JPEGs in `app/img/phones/` to `app/assets/img/phones` so
@@ -287,7 +287,7 @@ The `app.css` file was changed to size the thumbnails and to better
 style the page.  Finally, a third end-to-end test was added to
 `test/e2e/scenarios.coffee`.
 
-## Step-6a
+## Step-6a - Use Stylus
 
 Now that we have a not so trivial stylesheet, we can introduce a
 dynamic stylesheet language processor.  I've chosen
@@ -296,3 +296,23 @@ dynamic stylesheet language processor.  I've chosen
 The resulting file is not much different and doesn't take advantage of
 more advanced features of Stylus.  You'll also need to install
 `stylus-brunch` (which has been added to `package.json`.
+
+## Step-7 - Routing and App Partitioning
+
+This step adds `app/app.coffee` which uses the
+[$routeProvider](http://docs.angularjs.org/api/ng.$routeProvider)
+service to handle application routes.
+
+On the HTML side, most of the body of `app/index.jade` was split and
+placed in `partials/phone-list.jade`.  The former was replaced by a
+`div` tag with an
+[ng-view](http://docs.angularjs.org/api/ng.directive:ngView)
+attribute.  A new file, `partials/phone-detail.jade`, is a stub for a
+detail view.  A new controller, `PhoneDetailCtrl` was added to
+`app/scripts/controllers.coffee`.
+
+On the testing front, a unit test for the new controller was also
+stubbed out, but `scenarios.coffee` now verifies that the `phoneId` is
+passed down from the list to the detail stub.  In addition, an
+end-to-end test was added to check that the root URL gets redirected
+to `/phones`.

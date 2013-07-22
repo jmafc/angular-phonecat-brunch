@@ -1,29 +1,10 @@
 !!!
-html(lang="en", ng-app)
+html(lang="en", ng-app="phonecat")
   head
     meta(charset="utf-8")
     title Google Phone Gallery
     link(rel="stylesheet", href="css/app.css")
     script(src="js/vendor.js")
     script(src="js/app.js")
-  body(ng-controller="PhoneListCtrl")
-    .container-fluid
-      .row-fluid
-        .span2
-          // Sidebar content
-          | Search:
-          input(ng-model="query")
-          | Sort by:
-          select(ng-model="orderProp")
-            option(value="name") Alphabetical
-            option(value="age") Newest
-        .span10
-          // Body content
-          ul.phones
-            li.thumbnail(
-                ng-repeat="phone in phones | filter:query | orderBy:orderProp")
-              a.thumb(href="#/phones/{{phone.id}}")
-                img(ng-src="{{phone.imageUrl}}")
-              a(href="#/phones/{{phone.id}}")
-                {{phone.name}}
-              p {{phone.snippet}}
+  body
+    div(ng-view)

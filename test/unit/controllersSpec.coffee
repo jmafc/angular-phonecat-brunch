@@ -27,3 +27,5 @@ describe 'PhoneCat controllers', ->
 
     it 'should set the default value of orderProp model', ->
       expect(scope.orderProp).toBe 'age'
+
+describe 'PhoneDetailCtrl', ->
