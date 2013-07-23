@@ -79,11 +79,11 @@ uses the following layout (some sections to be expanded later):
       ...
     styles/               # CSS or compiled-to-CSS files
       app.css             # default stylesheet
-  bower.json              # Bower component spec
-  components/             # downloaded Bower components
+  bower_components/       # downloaded Bower components
     angular/
       angular.js          # AngularJS specified in bower.json
     ...
+  bower.json              # Bower components spec
   config.coffee           # Brunch config file
   node_modules/           # Node.js modules, specified in package.json
   package.json            # Node.js (npm) package spec
@@ -98,7 +98,7 @@ uses the following layout (some sections to be expanded later):
     karma.conf.js         # config file for unit tests
     unit/                 # unit test specs
       *Spec.coffee        # specs for controllers, directives, etc.
-  vendor/                 # 3rd party libraries (copied from components)
+  vendor/                 # 3rd party libraries (copied from bower_components)
     scripts/
     styles/
 ```
@@ -193,7 +193,7 @@ devDependency in `package.json` and changed the `scripts:test` command
 to start Karma.
 
 The original `karma.conf.js` was adapted by using the `angular.js` and
-`angular-mock.js` files directly from the Bower `components`
+`angular-mock.js` files directly from the `bower_components`
 subdirectory.  After some experimentation (on Debian), we also
 specified 'Firefox' and 'chromium' as browsers.  Please refer to
 [Karma

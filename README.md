@@ -37,7 +37,7 @@ so you may want to issue it from a Git Bash window.
 Until full Bower support is released for Brunch, some manual steps are
 necessary:
 
- - Invoke `bower install`.  This will create the `components`
+ - Invoke `bower install`.  This will create the `bower_components`
    directory and fetch the AngularJS and Twitter Bootstrap components
    specified in `bower.json` into the new directory.
 
@@ -48,8 +48,8 @@ necessary:
  - Copy components to the vendor directories:
 
     ```
-    cp components/angular/angular.js vendor/scripts/
-    cp components/bootstrap/docs/assets/css/bootstrap.css vendor/styles/
+    cp bower_components/angular/angular.js vendor/scripts/
+    cp bower_components/bootstrap/docs/assets/css/bootstrap.css vendor/styles/
     ```
 
 Note: The component versions in `bower.json` were chosen to match the
