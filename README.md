@@ -27,34 +27,38 @@ Install Brunch globally, using:
 
 ### Bower
 
-Install Bower globally, using:
+Install Bower globally and then install Bower components, using:
 
- `npm install -g bower`
+ ```
+ npm install -g bower
+ bower install
+ ```
 
-On Windows, the above command has to be invoked with Git on your path,
-so you may want to issue it from a Git Bash window.
+Note: The latter command requires that Git be on your path, so on
+Windows you may want to invoke it from a Git Bash window.
 
-Until full Bower support is released for Brunch, some manual steps are
-necessary:
+`bower install` will create the `bower_components` directory and
+fetch the AngularJS and Twitter Bootstrap components specified in
+`bower.json` into the new directory.
 
- - Invoke `bower install`.  This will create the `bower_components`
-   directory and fetch the AngularJS and Twitter Bootstrap components
-   specified in `bower.json` into the new directory.
+Note: Due to a problem in Brunch 1.7.0, you currently have to manually
+copy the Bootstrap CSS file to a `vendor` directory.  Do the
+following:
 
- - Create the `vendor` directories:
+```
+mkdir -p vendor/scripts vendor/styles
+cp bower_components/bootstrap/docs/assets/css/bootstrap.css vendor/styles/
+```
 
-    `mkdir -p vendor/scripts vendor/styles`
-
- - Copy components to the vendor directories:
-
-    ```
-    cp bower_components/angular/angular.js vendor/scripts/
-    cp bower_components/bootstrap/docs/assets/css/bootstrap.css vendor/styles/
-    ```
+Brunch will then concatenate `bootstrap.css` before the application
+stylesheet (it will also copy it to `public/css` but this can be
+disregarded).
 
 Note: The component versions in `bower.json` were chosen to match the
 AngularJS tutorial at the time this project was created.  Feel free to
-update to more recent versions.
+update to more recent versions.  However, be aware that from Bootstrap
+2.2.0, JQuery 1.8.3 is also pulled in, but it cannot be installed
+automatically by Brunch because its `bower.json` lacks a `main` entry.
 
 ### Start the Application
 
