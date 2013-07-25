@@ -46,7 +46,7 @@ copy the Bootstrap CSS file to a `vendor` directory.  Do the
 following:
 
 ```
-mkdir -p vendor/scripts vendor/styles
+mkdir -p vendor/styles
 cp bower_components/bootstrap/docs/assets/css/bootstrap.css vendor/styles/
 ```
 
