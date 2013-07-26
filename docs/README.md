@@ -332,3 +332,12 @@ The unit test stub for PhoneDetailCtrl was also changed to actually
 verify proper fetching of (mocked) detail data.  Similarly, the phone
 detail scenario test now checks the phone name (rather than
 `phoneId`).
+
+## Step-9 - Custom Filter
+
+This step adds a custom filter to display Boolean values using Unicode
+symbols.  The filter is defined in `app/scripts/filters.coffee` and
+this module is injected into `app/app.coffee`.  The
+`phone-detail.jade` template was changed to use the filter in a couple
+of items.  A unit test to verify the filter was added with
+`test/unit/filterSpec.coffee`.

@@ -2,7 +2,7 @@
 
 ### App Module ###
 
-angular.module('phonecat', []).
+angular.module('phonecat', ['phonecatFilters']).
   config(['$routeProvider', ($routeProvider) ->
     $routeProvider.
       when(
