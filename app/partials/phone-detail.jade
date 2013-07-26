@@ -1,4 +1,4 @@
-img.phone(ng-src="{{phone.images[0]}}")
+img.phone(ng-src="{{mainImageUrl}}")
 
 h1 {{phone.name}}
 
@@ -6,7 +6,7 @@ p {{phone.description}}
 
 ul.phone-thumbs
   li(ng-repeat="img in phone.images")
-    img(ng-src="{{img}}")
+    img(ng-src="{{img}}", ng-click="setImage(img)")
 
 ul.specs
   li

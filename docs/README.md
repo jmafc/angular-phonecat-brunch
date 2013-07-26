@@ -341,3 +341,14 @@ this module is injected into `app/app.coffee`.  The
 `phone-detail.jade` template was changed to use the filter in a couple
 of items.  A unit test to verify the filter was added with
 `test/unit/filterSpec.coffee`.
+
+## Step-10 - Event Handlers
+
+A simple click event handler was added through an
+[ng-click](http://docs.angularjs.org/api/ng.directive:ngClick)
+attribute in the list of secondary images in the `phone-detail.jade`
+partial. This invokes a `setImage` function that was coded as part of
+the `PhoneDtailCtrl` controller.
+
+To verify this, one unit test and two end-to-end tests were also
+written.
