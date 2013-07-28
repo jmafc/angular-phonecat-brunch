@@ -4,6 +4,14 @@
 
 describe 'PhoneCat controllers', ->
 
+  beforeEach ->
+    this.addMatchers({
+      toEqualData: (expected) ->
+        return angular.equals this.actual, expected
+      })
+
+  beforeEach(module 'phonecatServices')
+
   describe 'PhoneListCtrl', ->
     scope = {}
     ctrl = undefined
@@ -19,11 +27,11 @@ describe 'PhoneCat controllers', ->
     )
 
     it 'should create "phones" model with 2 phones fetched from xhr', ->
-      expect(scope.phones).toBeUndefined()
+      expect(scope.phones).toEqual []
       $httpBackend.flush()
 
-      expect(scope.phones).toEqual [{name: 'Nexus S'},
-                                    {name: 'Motorola DROID'}]
+      expect(scope.phones).toEqualData [{name: 'Nexus S'},
+                                        {name: 'Motorola DROID'}]
 
     it 'should set the default value of orderProp model', ->
       expect(scope.orderProp).toBe 'age'
@@ -48,7 +56,7 @@ describe 'PhoneCat controllers', ->
     )
 
     it 'should fetch phone detail', ->
-      expect(scope.phone).toBeUndefined()
+      expect(scope.phone).toEqualData {}
       $httpBackend.flush()
 
-      expect(scope.phone).toEqual xyzPhoneData()
+      expect(scope.phone).toEqualData xyzPhoneData()

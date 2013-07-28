@@ -4,7 +4,7 @@ files = [
   JASMINE,
   JASMINE_ADAPTER,
   'bower_components/angular/angular.js',
-  'bower_components/angular-mocks/angular-mocks.js',
+  'bower_components/angular-*/angular-*.js',
   'app/scripts/**/*.coffee',
   'test/unit/**/*.coffee'
 ];

@@ -8,6 +8,7 @@
   ],
   "dependencies": {
     "angular": "1.0.6",
+    "angular-resource": "1.0.6",
     "bootstrap": "2.0.3"
   },
   "devDependencies": {

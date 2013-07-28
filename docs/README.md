@@ -71,14 +71,16 @@ uses the following layout (some sections to be expanded later):
 
 ```
   app/                    # application source files
-    assets/               # static files
-      images/
+    app.coffee            # main application script
+    assets/               # static files (copied as-is to `public`)
     index.jade            # main Jade template file
-    scripts/              # CoffeeScript/JavaScript files
+    partials/             # partial Jade templates
+      *.jade
+    scripts/              # application scripts
       controllers.coffee  # application controllers
       ...
-    styles/               # CSS or compiled-to-CSS files
-      app.css             # default stylesheet
+    styles/               # application stylesheets
+      app.styl            # default stylesheet
   bower_components/       # downloaded Bower components
     angular/
       angular.js          # AngularJS specified in bower.json
@@ -95,11 +97,13 @@ uses the following layout (some sections to be expanded later):
       app.js              # concatenation of app JavaScript files
       vendor.js           # concatenation of vendor JavaScript files
   test/                   # test specs and config files
+    e2e/                  # scenario (end-to-end) tests
+      scenarios.coffee    # specs for scenario tests
     karma.conf.js         # config file for unit tests
+    karma-e2e.conf.js     # config file for end-to-end tests
     unit/                 # unit test specs
       *Spec.coffee        # specs for controllers, directives, etc.
-  vendor/                 # 3rd party libraries (copied from bower_components)
-    scripts/
+  vendor/                 # 3rd party libraries
     styles/
 ```
 
@@ -137,6 +141,11 @@ and the [AngularJS Tutorial](http://docs.angularjs.org/tutorial/index)
 for details on the steps from the basic AngularJS viewpoint.  In what
 follows, we highlight the differences between *angular-phonecat* and
 this project.
+
+If you follow along by checking out each step, please remember that
+when packages or components are added to `package.json` or
+`bower.json`, you will need to run `npm install` or `bower install`,
+respectively, in order to add the parts to your environment.
 
 ## Step-0 - Bootstrapping the App
 
@@ -352,3 +361,22 @@ the `PhoneDtailCtrl` controller.
 
 To verify this, one unit test and two end-to-end tests were also
 written.
+
+## Step-11 - Custom Service
+
+In this step of the original tutorial, the $http service introduced in
+step-5 was replaced by a custom service using the
+[$resource](http://docs.angularjs.org/api/ngResource.$resource)
+factory.  This doesn't affect the application's external behavior in
+any way, but makes it easier to program --since it is a higher-level
+API-- or to modify, e.g., by replacing the backend.
+
+To implement the factory we first had to add `angular-resource` to
+`bower.json`.  The custom service was then defined in
+`app/scripts/services.coffee` and injected into the application in
+`app/app.coffee`.  The service replaced the $http calls in
+`app/scripts/controllers.coffee`.
+
+For testing, `test/karma.conf.js` was modified to generalize the
+AngularJS files needed.  The `controllersSpec.coffee` was also
+modified, as per the original tutorial.
