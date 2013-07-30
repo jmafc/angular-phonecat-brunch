@@ -7,7 +7,15 @@ html(lang="en", ng-app)
     script(src="js/vendor.js")
     script(src="js/app.js")
   body(ng-controller="PhoneListCtrl")
-    ul
-      li(ng-repeat="phone in phones")
-        {{phone.name}}
-        p {{phone.snippet}}
+    .container-fluid
+      .row-fluid
+        .span2
+          // Sidebar content
+          | Search:
+          input(ng-model="query")
+        .span10
+          // Body content
+          ul.phones
+            li(ng-repeat="phone in phones | filter:query")
+              {{phone.name}}
+              p {{phone.snippet}}
