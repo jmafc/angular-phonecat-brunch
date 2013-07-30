@@ -20,6 +20,10 @@ html(lang="en", ng-app)
         .span10
           // Body content
           ul.phones
-            li(ng-repeat="phone in phones | filter:query | orderBy:orderProp")
-              {{phone.name}}
+            li.thumbnail(
+                ng-repeat="phone in phones | filter:query | orderBy:orderProp")
+              a.thumb(href="#/phones/{{phone.id}}")
+                img(ng-src="{{phone.imageUrl}}")
+              a(href="#/phones/{{phone.id}}")
+                {{phone.name}}
               p {{phone.snippet}}
