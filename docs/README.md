@@ -270,3 +270,18 @@ straightforward to convert to Jade and CoffeeScript.  Note that the
 CoffeeScript files have been style-checked with
 [CoffeeLint](http://www.coffeelint.org/), which resulted, for example,
 in reformatting some long lines.
+
+## Step-5 - XHR and Dependency Injection
+
+At this stage, the hard-coded data in the controller is replaced by a
+static `phones.json` file.  We placed it under `app/assets/phones` so
+that Brunch will copy it into `public/phones`. The file is loaded
+using the [$http service](http://docs.angularjs.org/api/ng.$http),
+which is passed into the `PhoneListCtrl` controller using [dependency
+injection](http://docs.angularjs.org/guide/di).
+
+This process is mocked in the unit tests by using the
+[inject](http://docs.angularjs.org/api/angular.mock.inject) function
+to supply fixed data and by instantiating the controller before each
+test.  The scenario test only required adjustment to the expected item
+counts.

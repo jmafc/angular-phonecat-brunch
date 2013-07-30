@@ -10,13 +10,13 @@ describe 'PhoneCat App', ->
       browser().navigateTo '/'
 
     it 'should filter the phone list as user types into the search box', ->
-      expect(repeater('.phones li').count()).toBe 3
+      expect(repeater('.phones li').count()).toBe 20
 
       input('query').enter('nexus')
       expect(repeater('.phones li').count()).toBe 1
 
       input('query').enter('motorola')
-      expect(repeater('.phones li').count()).toBe 2
+      expect(repeater('.phones li').count()).toBe 8
 
     it 'should be possible to control phone order via the ' +
        'drop down select box', ->
