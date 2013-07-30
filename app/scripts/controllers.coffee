@@ -1,6 +1,6 @@
 'use strict'
 
-# Controllers
+### Controllers ###
 
 PhoneListCtrl = ($scope, $http) ->
   $http.get('phones/phones.json').success( (data) ->
@@ -10,3 +10,8 @@ PhoneListCtrl = ($scope, $http) ->
   $scope.orderProp = 'age'
 
 #PhoneListCtrl.$inject = ['$scope', '$http']
+
+PhoneDetailCtrl = ($scope, $routeParams) ->
+  $scope.phoneId = $routeParams.phoneId
+
+#PhoneDetailCtrl.$inject = ['$scope', '$routeParams']

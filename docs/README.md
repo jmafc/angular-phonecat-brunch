@@ -305,3 +305,23 @@ dynamic stylesheet language processor.  I've chosen
 The resulting file is not much different and doesn't take advantage of
 more advanced features of Stylus.  You'll also need to install
 `stylus-brunch` (which has been added to `package.json`.
+
+## Step-7 - Routing and App Partitioning
+
+This step adds `app/app.coffee` which uses the
+[$routeProvider](http://docs.angularjs.org/api/ng.$routeProvider)
+service to handle application routes.
+
+On the HTML side, most of the body of `app/index.jade` was split and
+placed in `partials/phone-list.jade`.  The former was replaced by a
+`div` tag with an
+[ng-view](http://docs.angularjs.org/api/ng.directive:ngView)
+attribute.  A new file, `partials/phone-detail.jade`, is a stub for a
+detail view.  A new controller, `PhoneDetailCtrl` was added to
+`app/scripts/controllers.coffee`.
+
+On the testing front, a unit test for the new controller was also
+stubbed out, but `scenarios.coffee` now verifies that the `phoneId` is
+passed down from the list to the detail stub.  In addition, an
+end-to-end test was added to check that the root URL gets redirected
+to `/phones`.
