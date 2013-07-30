@@ -295,3 +295,13 @@ modified to include IMG tags (and also links to future detail pages.
 The `app.css` file was changed to size the thumbnails and to better
 style the page.  Finally, a third end-to-end test was added to
 `test/e2e/scenarios.coffee`.
+
+## Step-6a - Use Stylus
+
+Now that we have a not so trivial stylesheet, we can introduce a
+dynamic stylesheet language processor.  I've chosen
+[Stylus](http://learnboost.github.io/stylus/) and this step renames
+(and modifies) `app/styles/app.css` to `app.styl` for this purpose.
+The resulting file is not much different and doesn't take advantage of
+more advanced features of Stylus.  You'll also need to install
+`stylus-brunch` (which has been added to `package.json`.
