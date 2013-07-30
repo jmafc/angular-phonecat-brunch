@@ -5,11 +5,9 @@ html(lang="en", ng-app)
     title Google Phone Gallery
     link(rel="stylesheet", href="css/app.css")
     script(src="js/vendor.js")
-  body
+    script(src="js/app.js")
+  body(ng-controller="PhoneListCtrl")
     ul
-      li
-        span Nexus S
-        p Fast just got faster with Nexus S.
-      li
-        span Motorola XOOM™ with Wi-Fi
-        p The Next, Next Generation tablet.
+      li(ng-repeat="phone in phones")
+        {{phone.name}}
+        p {{phone.snippet}}

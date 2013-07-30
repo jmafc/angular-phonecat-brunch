@@ -183,3 +183,34 @@ This step introduces some minor HTML and CSS changes:
 
 Note that the latter CSS file gets concatenated at the end of
 `bootstrap.css` to form `public/css/app.css`.
+
+## Step-2 - Angular ngRepeat Directive
+
+This is where an [AngularJS
+controller](http://docs.angularjs.org/guide/dev_guide.mvc.understanding_controller)
+makes its first appearance, feeding static data to the application.
+The HTML also becomes dynamic with the [ngRepeat
+directive](http://docs.angularjs.org/api/ng.directive:ngRepeat).
+
+## Unit Testing
+
+Step-2 also incorporates unit testing.  This is done through the
+[Karma](http://karma-runner.github.io/) test runner and the
+[Jasmine](http://pivotal.github.io/jasmine/) behavior-driven
+development (BDD) framework.  To support this, we added Karma as a
+devDependency in `package.json` and changed the `scripts:test` command
+to start Karma.
+
+The original `karma.conf.js` was adapted by using the `angular.js` and
+`angular-mock.js` files directly from the `bower_components`
+subdirectory.  After some experimentation (on Debian), we also
+specified 'Firefox' and 'chromium' as browsers.  Please refer to
+[Karma
+documentation](http://karma-runner.github.io/0.8/config/browsers.html)
+for more details on choices for your environment.
+
+The `test/unit/controllersSpec.js` unit test specification is
+identical to the one in *angular-phonecat* (but see below).
+
+To run the unit tests, invoke `npm test`.  Karma will be watching your
+source files as well, so that changes you make will trigger a re-test.
