@@ -361,3 +361,22 @@ the `PhoneDtailCtrl` controller.
 
 To verify this, one unit test and two end-to-end tests were also
 written.
+
+## Step-11 - Custom Service
+
+In this step of the original tutorial, the $http service introduced in
+step-5 was replaced by a custom service using the
+[$resource](http://docs.angularjs.org/api/ngResource.$resource)
+factory.  This doesn't affect the application's external behavior in
+any way, but makes it easier to program --since it is a higher-level
+API-- or to modify, e.g., by replacing the backend.
+
+To implement the factory we first had to add `angular-resource` to
+`bower.json`.  The custom service was then defined in
+`app/scripts/services.coffee` and injected into the application in
+`app/app.coffee`.  The service replaced the $http calls in
+`app/scripts/controllers.coffee`.
+
+For testing, `test/karma.conf.js` was modified to generalize the
+AngularJS files needed.  The `controllersSpec.coffee` was also
+modified, as per the original tutorial.
