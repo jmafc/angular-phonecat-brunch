@@ -173,3 +173,13 @@ In this step, we converted the `index.html` file to a
 with the help of
 [jade-angularjs-brunch](https://github.com/GulinSS/jade-angularjs-brunch),
 and ends up as `public/index.html` just like the original.
+
+## Step-1 - Static Item List
+
+This step introduces some minor HTML and CSS changes:
+
+ - `index.jade` got an unordered list of two phones (and a title change)
+ - `app/styles/app.css` was added which only specified body padding.
+
+Note that the latter CSS file gets concatenated at the end of
+`bootstrap.css` to form `public/css/app.css`.
