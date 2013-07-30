@@ -325,3 +325,19 @@ stubbed out, but `scenarios.coffee` now verifies that the `phoneId` is
 passed down from the list to the detail stub.  In addition, an
 end-to-end test was added to check that the root URL gets redirected
 to `/phones`.
+
+## Step-8 - Details View
+
+In this step we fill out the stubs from the previous one.  To provide
+detailed phone information, we copied JSON files and JPEG images from
+the original project to the `app/assets/phones` and
+`app/assets/img/phones` directories, respectively.
+
+The `app/partials/phone-detail.jade` was fleshed out to display the
+detailed information and images and the 'app/styles/app.styl`
+stylesheet was updated to improve the esthetics.
+
+The unit test stub for PhoneDetailCtrl was also changed to actually
+verify proper fetching of (mocked) detail data.  Similarly, the phone
+detail scenario test now checks the phone name (rather than
+`phoneId`).

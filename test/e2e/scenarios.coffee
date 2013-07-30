@@ -47,5 +47,5 @@ describe 'PhoneCat App', ->
     beforeEach ->
       browser().navigateTo '/#/phones/nexus-s'
 
-    it 'should display placeholder page with phoneId', ->
-      expect(binding('phoneId')).toBe 'nexus-s'
+    it 'should display nexus-s page', ->
+      expect(binding('phone.name')).toBe 'Nexus S'
