@@ -3,6 +3,8 @@ exports.config =
   modules:
     definition: false
     wrapper: false
+  paths:
+    jadeCompileTrigger: '.compile-jade'
   files:
     javascripts:
       joinTo:
@@ -11,3 +13,11 @@ exports.config =
     stylesheets:
       joinTo:
         'css/app.css': /^(app|bower_components|vendor)/
+    templates:
+      joinTo:
+        '.compile-jade': /^app/
+  plugins:
+    jade:
+      pretty: yes
+    jade_angular:
+      modules_folder: 'templates'

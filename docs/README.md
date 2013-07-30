@@ -165,3 +165,11 @@ You can also verify that Brunch recompilation and browser reloading is
 working by doing the experiment suggested in [this
 step](http://docs.angularjs.org/tutorial/step_00) of the AngularJS
 tutorial.
+
+## Step-0a - Use Jade Templates
+
+In this step, we converted the `index.html` file to a
+[Jade](http://jade-lang.com/) template.  `index.jade` gets compiled,
+with the help of
+[jade-angularjs-brunch](https://github.com/GulinSS/jade-angularjs-brunch),
+and ends up as `public/index.html` just like the original.
