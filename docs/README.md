@@ -214,3 +214,9 @@ identical to the one in *angular-phonecat* (but see below).
 
 To run the unit tests, invoke `npm test`.  Karma will be watching your
 source files as well, so that changes you make will trigger a re-test.
+
+## Step-2a - Use CoffeeScript
+
+At this stage we replaced the JavaScript files
+(`app/scripts/controllers.js` and `test/unit/controllersSpec.js`) by
+[CoffeeScript](http://coffeescript.org/) counterparts.
