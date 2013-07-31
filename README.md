@@ -66,6 +66,25 @@ Use the following:
 
 `npm start`
 
+### Auto-Reload
+
+In order for [Brunch
+auto-reload](https://github.com/brunch/auto-reload-brunch) to work
+properly, both the server (in
+`node_modules/auto-reload-brunch/lib/index.js`) and the browser (in
+`node_modules/auto-reload-brunch/vendor/auto-reload.js) components
+have to be made available.  The former gets picked up simply by being
+in `node_modules`.  However, the latter has to be included somehow in
+the `public/index.html`.
+
+You could do that explicitly by copying `auto-reload.js` to
+`app/assets/js` and adding a `<script>` tag to load it from
+`js/auto-reload.js`.  An alternative would be to add
+`auto-reload-brunch` as a dependency in `bower.json`.  In this way, it
+will be concatenated into `js/vendor.js` by Brunch.  A third option is
+to copy `auto-reload.js` from `node_modules` to `vendor/scripts`,
+which will again add it to `js/vendor.js`.
+
 ### Karma
 
 From step-2 onwards, you will need the Karma test runner, so you may

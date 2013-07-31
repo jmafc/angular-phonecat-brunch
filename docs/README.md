@@ -164,7 +164,9 @@ minified.
 You can also verify that Brunch recompilation and browser reloading is
 working by doing the experiment suggested in [this
 step](http://docs.angularjs.org/tutorial/step_00) of the AngularJS
-tutorial.
+tutorial.  Ensure you read and follow the [Auto-Reload
+section](https://github.com/jmafc/angular-phonecat-brunch#auto-reload)
+in the main README.
 
 ## Step-0a - Use Jade Templates
 
