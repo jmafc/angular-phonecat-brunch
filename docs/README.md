@@ -101,6 +101,7 @@ uses the following layout (some sections to be expanded later):
       scenarios.coffee    # specs for scenario tests
     karma.conf.js         # config file for unit tests
     karma-e2e.conf.js     # config file for end-to-end tests
+    karma-shared.conf.js  # shared configuration items
     unit/                 # unit test specs
       *Spec.coffee        # specs for controllers, directives, etc.
   vendor/                 # 3rd party libraries
@@ -206,10 +207,14 @@ to start Karma.
 The original `karma.conf.js` was adapted by using the `angular.js` and
 `angular-mock.js` files directly from the `bower_components`
 subdirectory.  After some experimentation (on Debian), we also
-specified 'Firefox' and 'chromium' as browsers.  Please refer to
-[Karma
-documentation](http://karma-runner.github.io/0.8/config/browsers.html)
-for more details on choices for your environment.
+specified 'Firefox' and 'Chrome' (or `chromium`) as browsers (now in
+`karma-shared.conf.js`).  Please refer to [Karma
+documentation](http://karma-runner.github.io/0.10/config/browsers.html)
+for more details on choices for your environment.  For example, on
+Debian, in order to run Chromium as Chrome, you'll need to use
+`CHROME_BIN`, i.e.,
+
+ `export CHROME_BIN=/usr/bin/chromium`
 
 The `test/unit/controllersSpec.js` unit test specification is
 identical to the one in *angular-phonecat* (but see below).

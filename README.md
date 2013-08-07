@@ -93,9 +93,11 @@ want to install it globally now, using:
 `npm install -g karma`
 
 In addition, you'll want to edit the `browsers` line in the
-`test/karma.conf.js` and `test/karma-e2e.conf.js` files.  For example,
-if testing on Windows with Firefox and Internet Explorer available,
-change the line to
+`test/karma.conf.js` and `test/karma-e2e.conf.js` files (or in
+`test/karma-shared.conf.js` in the latest versions).  For example, if
+testing on Windows with Firefox and Internet Explorer available,
+change the line to (use `:` instead of '=' if editing
+`karma-shared.conf.js`):
 
 `browsers = ['Firefox', 'IE'];`
 
