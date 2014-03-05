@@ -1,14 +1,15 @@
 {
   "name": "angular-phonecat-brunch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components"
   ],
   "dependencies": {
-    "angular": "1.0.6",
-    "bootstrap": "2.0.3"
+    "angular": "1.2.14",
+    "bootstrap": "2.0.3",
+    "jquery": "1.10.2"
   },
   "overrides": {
     "bootstrap": {
