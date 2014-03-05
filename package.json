@@ -1,6 +1,6 @@
 {
   "name": "angular-phonecat-brunch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AngularJS phone catalog tutorial with Brunch",
   "scripts": {
     "start": "brunch watch --server",
@@ -17,8 +17,8 @@
   "author": "Joe Abbate",
   "license": "MIT",
   "dependencies": {
-    "coffee-script-brunch": ">= 1.0 < 1.8",
-    "auto-reload-brunch": "~1.6.4",
+    "coffee-script-brunch": ">= 1.0 < 1.9",
+    "auto-reload-brunch": "~1.7.3",
     "javascript-brunch": ">= 1.0 < 1.8",
     "css-brunch": ">= 1.0 < 1.8",
     "uglify-js-brunch": ">= 1.0 < 1.8",
