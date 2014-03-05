@@ -2,7 +2,9 @@
 
 # Controllers
 
-PhoneListCtrl = ($scope) ->
+phonecatApp = angular.module('phonecatApp', [])
+
+phonecatApp.controller('PhoneListCtrl', ($scope) ->
   $scope.phones = [
     name: "Nexus S"
     snippet: "Fast just got faster with Nexus S."
@@ -13,3 +15,4 @@ PhoneListCtrl = ($scope) ->
     name: "MOTOROLA XOOM™"
     snippet: "The Next, Next Generation tablet."
   ]
+)
