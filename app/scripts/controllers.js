@@ -2,7 +2,9 @@
 
 /* Controllers */
 
-function PhoneListCtrl($scope) {
+var phonecatApp = angular.module('phonecatApp', []);
+
+phonecatApp.controller('PhoneListCtrl', function($scope) {
   $scope.phones = [
     {"name": "Nexus S",
      "snippet": "Fast just got faster with Nexus S."},
@@ -11,4 +13,4 @@ function PhoneListCtrl($scope) {
     {"name": "MOTOROLA XOOM™",
      "snippet": "The Next, Next Generation tablet."}
   ];
-}
+});
