@@ -1,19 +1,37 @@
-basePath = '../';
+module.exports = function(config) {
+  config.set({
+    basePath: '../',
 
-files = [
-  ANGULAR_SCENARIO,
-  ANGULAR_SCENARIO_ADAPTER,
-  'test/e2e/**/*.coffee'
-];
+    files: [
+      'test/e2e/**/*.coffee'
+    ],
 
-autoWatch = false;
+    autoWatch: false,
 
-browsers = ['Firefox', 'chromium'];
+    browsers: ['Firefox', 'Chrome'],
 
-singleRun = true;
+    frameworks: ['ng-scenario'],
 
-proxies = {
-  '/': 'http://localhost:3333/'
+    singleRun: true,
+
+    proxies: {
+      '/': 'http://localhost:3333/'
+    },
+
+    urlRoot: '__test/',
+
+    plugins: [
+      'karma-coffee-preprocessor',
+      'karma-junit-reporter',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-jasmine',
+      'karma-ng-scenario'
+    ],
+
+    junitReporter: {
+      outputFile: 'test_out/e2e.xml',
+      suite: 'e2e'
+    }
+  });
 };
-
-urlRoot = '__test/';
