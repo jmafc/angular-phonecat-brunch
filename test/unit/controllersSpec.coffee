@@ -6,8 +6,11 @@ describe 'PhoneCat controllers', ->
 
   describe 'PhoneListCtrl', ->
 
-    it 'should create "phones" model with 3 phones', ->
+    beforeEach(module('phonecatApp'))
+
+    it 'should create "phones" model with 3 phones', inject( ($controller) ->
       scope = {}
-      ctrl = new PhoneListCtrl(scope)
+      ctrl = $controller('PhoneListCtrl', {$scope: scope})
 
       expect(scope.phones.length).toBe(3)
+    )
