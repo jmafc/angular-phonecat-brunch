@@ -2,16 +2,18 @@
 
 ### Controllers ###
 
-PhoneListCtrl = ($scope, $http) ->
-  $http.get('phones/phones.json').success( (data) ->
-    $scope.phones = data
-  )
+phonecatControllers = angular.module('phonecatControllers', [])
 
-  $scope.orderProp = 'age'
+phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
+  ($scope, $http) ->
+    $http.get('phones/phones.json').success( (data) ->
+      $scope.phones = data
+    )
 
-#PhoneListCtrl.$inject = ['$scope', '$http']
+    $scope.orderProp = 'age'
+  ])
 
-PhoneDetailCtrl = ($scope, $routeParams) ->
-  $scope.phoneId = $routeParams.phoneId
-
-#PhoneDetailCtrl.$inject = ['$scope', '$routeParams']
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
+  ($scope, $routeParams) ->
+    $scope.phoneId = $routeParams.phoneId
+  ])
