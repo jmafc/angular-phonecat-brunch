@@ -21,3 +21,4 @@ exports.config =
       pretty: yes
     jade_angular:
       modules_folder: 'templates'
+      locals: {}
