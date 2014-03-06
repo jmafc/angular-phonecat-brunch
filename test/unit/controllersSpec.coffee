@@ -4,6 +4,9 @@
 
 describe 'PhoneCat controllers', ->
 
+  beforeEach(module('phonecatApp'))
+  beforeEach(module('app.templates'))
+
   describe 'PhoneListCtrl', ->
     scope = {}
     ctrl = undefined
@@ -15,7 +18,7 @@ describe 'PhoneCat controllers', ->
         respond [{name: 'Nexus S'}, {name: 'Motorola DROID'}]
 
       scope = $rootScope.$new()
-      ctrl = $controller(PhoneListCtrl, {$scope: scope})
+      ctrl = $controller('PhoneListCtrl', {$scope: scope})
     )
 
     it 'should create "phones" model with 2 phones fetched from xhr', ->
@@ -44,7 +47,7 @@ describe 'PhoneCat controllers', ->
 
       $routeParams.phoneId = 'xyz'
       scope = $rootScope.$new()
-      ctrl = $controller(PhoneDetailCtrl, {$scope: scope})
+      ctrl = $controller('PhoneDetailCtrl', {$scope: scope})
     )
 
     it 'should fetch phone detail', ->
