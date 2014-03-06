@@ -38,7 +38,7 @@ Note: The latter command requires that Git be on your path, so on
 Windows you may want to invoke it from a Git Bash window.
 
 `bower install` will create the `bower_components` directory and
-fetch the AngularJS and Twitter Bootstrap components specified in
+fetch the AngularJS, Bootstrap and jQuery components specified in
 `bower.json` into the new directory.
 
 Note: Due to a problem in Brunch 1.7.0, you currently have to manually
@@ -57,7 +57,7 @@ disregarded).
 Note: The component versions in `bower.json` were chosen to match the
 AngularJS tutorial at the time this project was created.  Feel free to
 update to more recent versions.  However, be aware that from Bootstrap
-2.2.0, JQuery 1.8.3 is also pulled in, but it cannot be installed
+2.2.0, jQuery 1.8.3 is also pulled in, but it cannot be installed
 automatically by Brunch because its `bower.json` lacks a `main` entry.
 
 ### Start the Application

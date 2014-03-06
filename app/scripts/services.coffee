@@ -2,8 +2,9 @@
 
 ### Services ###
 
-angular.module('phonecatServices', ['ngResource']).
-  factory 'Phone', ($resource) ->
+phonecatServices = angular.module('phonecatServices', ['ngResource'])
+
+phonecatServices.factory('Phone', ['$resource', ($resource) ->
     return $resource 'phones/:phoneId.json', {}, {
       query: {
         method: 'GET'
@@ -11,3 +12,4 @@ angular.module('phonecatServices', ['ngResource']).
         isArray: true
       }
     }
+  ])

@@ -4,9 +4,8 @@ module.exports = function(config) {
   sharedConfig(config);
 
   config.set({
+    frameworks: ['ng-scenario'],
     files: [
-      'node_modules/karma-ng-scenario/lib/angular-scenario.js',
-      'node_modules/karma-ng-scenario/lib/adapter.js',
       'test/e2e/**/*.coffee'
     ],
     autoWatch: false,
@@ -14,6 +13,18 @@ module.exports = function(config) {
     proxies: {
       '/': 'http://localhost:3333/'
     },
-    urlRoot: '__test/'
+    urlRoot: '__test/',
+    plugins: [
+      'karma-coffee-preprocessor',
+      'karma-junit-reporter',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-jasmine',
+      'karma-ng-scenario'
+    ],
+    junitReporter: {
+      outputFile: 'test_out/e2e.xml',
+      suite: 'e2e'
+    }
   });
 };
