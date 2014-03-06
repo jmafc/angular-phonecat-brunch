@@ -2,17 +2,21 @@
 
 ### Controllers ###
 
-PhoneListCtrl = ($scope, Phone) ->
-  $scope.phones = Phone.query()
-  $scope.orderProp = 'age'
+phonecatControllers = angular.module('phonecatControllers', [])
 
-#PhoneListCtrl.$inject = ['$scope', 'Phone']
+phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
+  ($scope, Phone) ->
+    $scope.phones = Phone.query()
+    $scope.orderProp = 'age'
+  ])
 
-PhoneDetailCtrl = ($scope, $routeParams, Phone) ->
-  $scope.phone = Phone.get {phoneId: $routeParams.phoneId}, (phone) ->
-    $scope.mainImageUrl = phone.images[0]
+phonecatControllers.controller('PhoneDetailCtrl', [
+  '$scope', '$routeParams', 'Phone',
+  ($scope, $routeParams, Phone) ->
+    $scope.phone = Phone.get {phoneId: $routeParams.phoneId}, (phone) ->
+      $scope.mainImageUrl = phone.images[0]
 
-  $scope.setImage = (imageUrl) ->
-    $scope.mainImageUrl = imageUrl
+    $scope.setImage = (imageUrl) ->
+      $scope.mainImageUrl = imageUrl
+  ])
 
-#PhoneDetailCtrl.$inject = ['$scope', '$routeParams', 'Phone']

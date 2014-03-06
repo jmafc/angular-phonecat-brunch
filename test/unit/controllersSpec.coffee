@@ -10,7 +10,9 @@ describe 'PhoneCat controllers', ->
         return angular.equals this.actual, expected
       })
 
+  beforeEach(module('phonecatApp'))
   beforeEach(module 'phonecatServices')
+  beforeEach(module('app.templates'))
 
   describe 'PhoneListCtrl', ->
     scope = {}
@@ -23,11 +25,11 @@ describe 'PhoneCat controllers', ->
         respond [{name: 'Nexus S'}, {name: 'Motorola DROID'}]
 
       scope = $rootScope.$new()
-      ctrl = $controller(PhoneListCtrl, {$scope: scope})
+      ctrl = $controller('PhoneListCtrl', {$scope: scope})
     )
 
     it 'should create "phones" model with 2 phones fetched from xhr', ->
-      expect(scope.phones).toEqual []
+      expect(scope.phones).toEqualData []
       $httpBackend.flush()
 
       expect(scope.phones).toEqualData [{name: 'Nexus S'},
@@ -52,7 +54,7 @@ describe 'PhoneCat controllers', ->
 
       $routeParams.phoneId = 'xyz'
       scope = $rootScope.$new()
-      ctrl = $controller(PhoneDetailCtrl, {$scope: scope})
+      ctrl = $controller('PhoneDetailCtrl', {$scope: scope})
     )
 
     it 'should fetch phone detail', ->
